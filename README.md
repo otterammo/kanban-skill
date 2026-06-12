@@ -1,16 +1,34 @@
 # Kanban
 
-File-based Kanban boards for tracking units of work.
+File-based Kanban boards for tracking units of work broken down from larger initiatives.
 
-## Use Case
+## Overview
 
-Break down a project initiative into a numbered set of cards across a Kanban board. Agents create, move, and update cards as work progresses.
+This skill lets an agent create and manage a Kanban board stored as a directory structure — folders are columns, markdown files are cards. It's designed for agentic workflows where initiatives are decomposed into numbered, tracked task cards.
 
-## Quick Start
+## Installation
 
 ```bash
-cd your-project
-bash "$(pi skill kanban)/scripts/setup-board.sh"
+git clone <this-repo-url> ~/.agents/skills/kanban
 ```
 
-Create cards as markdown files in `kanban/1-backlog/`. Move them by relocating files to the appropriate status folder. See `kanban/AGENTS.md` for instructions.
+The agent auto-discovers skills in `~/.agents/skills/` when triggered by relevant prompts (kanban, task board, card creation).
+
+## Usage
+
+The most common flow:
+
+1. Prompt your agent: _"set up a kanban board for this project"_
+2. The agent creates the board structure in the CWD via `kanban/scripts/setup-board.sh`
+3. The agent breaks the initiative into numbered cards, placing them in `kanban/1-backlog/`
+4. Cards are moved between columns as work progresses
+5. Boards are project-local — one `kanban/` directory per repository
+
+Each board includes an `AGENTS.md` file for agent-facing instructions and a `card-template.md` reference.
+
+## Design Notes
+
+- Cards are globally numbered across the entire board
+- The agent chooses the card prefix based on initiative context
+- Board isolation is via CWD — no shared state between projects
+- When no context is provided, the board is created with no cards
