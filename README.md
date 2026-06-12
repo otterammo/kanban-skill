@@ -1,10 +1,6 @@
-# Kanban
+# kanban-skill
 
-File-based Kanban boards for tracking units of work broken down from larger initiatives.
-
-## Overview
-
-This skill lets an agent create and manage a Kanban board stored as a directory structure — folders are columns, markdown files are cards. It's designed for agentic workflows where initiatives are decomposed into numbered, tracked task cards.
+File-based kanban boards for tracking units of work broken down from larger initiatives, stored as a directory structure where folders are columns and markdown files are cards — designed for agentic workflows where initiatives are decomposed into numbered, tracked task cards.
 
 ## Installation
 
