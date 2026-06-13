@@ -11,7 +11,7 @@ Run the setup script to create a new board in the CWD:
 
 ```bash
 cd your-project
-bash "$(pi skill kanban)/scripts/setup-board.sh"
+bash ~/.agents/skills/kanban/scripts/setup-board.sh
 ```
 
 This creates `kanban/` with status folders. Add cards as markdown files.
@@ -22,6 +22,7 @@ This creates `kanban/` with status folders. Add cards as markdown files.
 kanban/
 ├── README.md        (empty or filled with initiative context)
 ├── AGENTS.md        (instructions — copy from skill)
+├── card-template.md (local card template reference)
 ├── 1-backlog/
 ├── 2-in-progress/
 ├── 3-blocked/
@@ -33,7 +34,7 @@ kanban/
 
 - **Filename:** `PREFIX-XXX.md` (e.g., `AUTH-001.md`). Agent picks the prefix from initiative context or repo name. Numbers are globally sequenced across the entire board.
 - **New cards** go in `kanban/1-backlog/` by default.
-- **Use the card template:** [references/card-template.md](references/card-template.md)
+- **Use the card template:** `kanban/card-template.md`
 
 ## Operations
 
@@ -61,13 +62,13 @@ See [references/AGENTS.md](references/AGENTS.md) for the standard agent instruct
 
 ## Status Codes
 
-| #    | Folder             | Meaning            |
-|------|--------------------|--------------------|
-| 1    | backlog            | Planned work       |
-| 2    | in-progress        | Currently being done |
-| 3    | blocked            | Stalled (note why) |
-| 4    | review             | Under review       |
-| 5    | done               | Complete           |
+| #    | Folder             | Meaning               |
+|------|--------------------|-----------------------|
+| 1    | backlog            | Planned work          |
+| 2    | in-progress        | Currently being done  |
+| 3    | blocked            | Stalled (note why)    |
+| 4    | review             | Under review          |
+| 5    | done               | Complete              |
 
 ## Notes
 

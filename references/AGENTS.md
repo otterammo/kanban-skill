@@ -6,13 +6,13 @@ This is a file-based Kanban system. Each status is a folder. Each card is a mark
 
 ### Status Folders
 
-| #    | Folder             | Meaning            |
-|------|--------------------|--------------------|
-| 1    | backlog            | Planned work       |
-| 2    | in-progress        | Currently being done |
-| 3    | blocked            | Stalled (note why) |
-| 4    | review             | Under review       |
-| 5    | done               | Complete           |
+| #   | Folder      | Meaning              |
+| --- | ----------- | -------------------- |
+| 1   | backlog     | Planned work         |
+| 2   | in-progress | Currently being done |
+| 3   | blocked     | Stalled (note why)   |
+| 4   | review      | Under review         |
+| 5   | done        | Complete             |
 
 ### Card Filename Convention
 
@@ -23,7 +23,7 @@ This is a file-based Kanban system. Each status is a folder. Each card is a mark
 
 ### Card Structure
 
-See [references/card-template.md](references/card-template.md) for the full card template.
+See [card-template.md](card-template.md) for the full card template.
 
 ### New Cards
 

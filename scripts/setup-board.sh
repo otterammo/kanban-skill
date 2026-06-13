@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Create a kanban board in the current working directory.
-# Usage: bash <(curl -sL pi-skill://kanban/scripts/setup-board.sh)
-#        or: bash "$(pi skill kanban)/scripts/setup-board.sh"
+# Usage: bash ~/.agents/skills/kanban/scripts/setup-board.sh
 
 set -euo pipefail
 
@@ -13,8 +12,9 @@ mkdir -p "$BOARD"/{1-backlog,2-in-progress,3-blocked,4-review,5-done}
 # Create README.md
 touch "$BOARD/README.md"
 
-# Copy AGENTS.md
+# Copy board instructions and card template so the generated board is self-contained.
 cp "$(dirname "$0")/../references/AGENTS.md" "$BOARD/AGENTS.md"
+cp "$(dirname "$0")/../references/card-template.md" "$BOARD/card-template.md"
 
 echo "✅ Kanban board created in $BOARD/"
 echo "   1-backlog  — planned work"

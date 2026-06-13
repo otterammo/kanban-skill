@@ -8,19 +8,21 @@ File-based kanban boards for tracking units of work broken down from larger init
 git clone <this-repo-url> ~/.agents/skills/kanban
 ```
 
-The agent auto-discovers skills in `~/.agents/skills/` when triggered by relevant prompts (kanban, task board, card creation).
+`~/.agents/skills/` is the standard install location for local agent skills.
 
 ## Usage
 
 The most common flow:
 
 1. Prompt your agent: _"set up a kanban board for this project"_
-2. The agent creates the board structure in the CWD via `kanban/scripts/setup-board.sh`
+2. The agent creates the board structure in the CWD via `bash ~/.agents/skills/kanban/scripts/setup-board.sh`
 3. The agent breaks the initiative into numbered cards, placing them in `kanban/1-backlog/`
 4. Cards are moved between columns as work progresses
 5. Boards are project-local — one `kanban/` directory per repository
 
-Each board includes an `AGENTS.md` file for agent-facing instructions and a `card-template.md` reference.
+You can also run the setup script directly without any agent harness.
+
+Each board includes an `AGENTS.md` file for agent-facing instructions and a local `card-template.md` reference.
 
 ## Design Notes
 
